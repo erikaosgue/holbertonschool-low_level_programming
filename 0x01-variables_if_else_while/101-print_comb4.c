@@ -15,8 +15,10 @@ int main(void)
 
 	for (i = 0; i <= 7; i++)
 	{
+		a = i + 1;
 		for (j = a; j <= 8; j++)
 		{
+			b = j + 1;
 			for (k = b; k <= 9; k++)
 			{
 				putchar(i + '0');
@@ -28,9 +30,7 @@ int main(void)
 					putchar(' ');
 				}
 			}
-			b = j + 1;
 		}
-		a = i + 1;
 	}
 	putchar('\n');
 	return (0);
