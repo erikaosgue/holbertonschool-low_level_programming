@@ -21,10 +21,10 @@ int main(void)
 		for (j = b; j <= 99; j++)
 		{
 
-			k = i/10;
-			l = i%10;
-			m = j/10;
-			n = j%10;
+			k = i / 10;
+			l = i % 10;
+			m = j / 10;
+			n = j % 10;
 			putchar(k + '0');
 			putchar(l + '0');
 			putchar(' ');
@@ -36,7 +36,6 @@ int main(void)
 				putchar(' ');
 			}
 		}
-		
 	}
 	putchar('\n');
 	return (0);
