@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * print_last_digit: return the last digit of a number
+ * print_last_digit - return the last digit of a number
  * @n: the number to be cheked
  * Return: the last digit of the number
  */
