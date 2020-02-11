@@ -1,9 +1,8 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
- * main - burger
+ * main - Print the holberton name
  *
- * Result: Entry point acces
+ * Return: 0
  */
 int main(void)
 {
