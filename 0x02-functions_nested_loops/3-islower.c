@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
- * _islower - check the code for Holberton School students.
- *
+ * _islower - return 1 or zero for the alphabet
+ * @c: parameter for checking caracheter
  * Return: Always 0.
  */
 int _islower(int c)
