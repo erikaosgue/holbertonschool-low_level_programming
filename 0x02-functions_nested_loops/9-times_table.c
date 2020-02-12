@@ -35,11 +35,8 @@ void times_table(void)
 			}
 			if (j == 9)
 				break;
-			else
-			{
-				_putchar(',');
-				_putchar(' ');
-			}
+			_putchar(',');
+			_putchar(' ');
 		}
 		_putchar('\n');
 	}
