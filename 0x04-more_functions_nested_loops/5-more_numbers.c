@@ -21,6 +21,6 @@ void more_numbers(void)
 			b = j % 10;
 			_putchar(b + '0');
 		}
+		_putchar('\n');
 	}
-	_putchar('\n');
 }
