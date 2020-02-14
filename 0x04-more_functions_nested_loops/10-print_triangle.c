@@ -1,9 +1,9 @@
 #include "holberton.h"
- /**
-  * print_triangle - Print a triangle with #
-  * @n: Size of the triangle
-  * Return: 0
-  */
+/**
+ * print_triangle - Print a triangle with # reciving an integer
+ * @n: Size of the triangle
+ * Return: 0
+ */
 void print_triangle(int n)
 {
 	int i;
