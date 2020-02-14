@@ -1,17 +1,17 @@
 #include "holberton.h"
 /**
  * print_sign - the sing of a number n
- * @n: the number to be checked
+ * @c: the number to be checked
  * Return: 1 if the number is positive, -1 if is negative, 0 otherwise
  */
-int print_sign(int n)
+int print_sign(int c)
 {
-	if (n > 0)
+	if (c > 0)
 	{
 		_putchar('+');
 		return (1);
 	}
-	else if (n < 0)
+	else if (c < 0)
 	{
 		_putchar('-');
 		return (-1);
