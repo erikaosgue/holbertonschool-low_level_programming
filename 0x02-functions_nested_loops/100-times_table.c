@@ -1,9 +1,9 @@
 #include "holberton.h"
 /**
-  * times_table - prints n times starting with 0
-  * @n: number to multiply
-  * Return: 0 always
-  */
+ * print_times_table - prints n times starting with 0
+ * @n: number to multiply
+ * Return: 0 always
+ */
 void print_times_table(int n)
 {
 	int m;
