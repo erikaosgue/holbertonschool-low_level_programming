@@ -12,24 +12,20 @@ int main(void)
 	int num2 = 1;
 	int num3 = 0;
 	int sum = 0;
-	int sum1 = 0;
 	int a = 4000000;
 
 	for (i = 0; i < 50; i++)
 	{
 		num3 = num1 + num2;
-		num1 = num2;
-		num2 = num3;
-		if (num2 % 2 == 0)
+		if (num3 <= a)
 		{
-			sum1 = sum + num2;
-			if (sum1 <= a)
-			{
-				sum = sum1;
-			}
-			else
-				break;
+			num1 = num2;
+			num2 = num3;
+			if (num2 % 2 == 0)
+				sum = sum + num2;
 		}
+		else
+			break;
 	}
 	printf("%d\n", sum);
 	return (0);
