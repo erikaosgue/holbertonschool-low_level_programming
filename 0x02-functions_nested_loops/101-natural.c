@@ -1,9 +1,9 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
+ * main - Sum multiples of 3 and 5 of the number 1024
  *
- *
- *
+ * Return: 0 Always
  */
 int main(void)
 {
@@ -21,10 +21,9 @@ int main(void)
 		{
 			sum = sum + d;
 		}
-		if (c < a && c % 10 !=5 && c % 10 != 0)
+		if (c < a && c % 10 != 5 && c % 10 != 0)
 		{
 			sum = sum + c;
-			
 		}
 	}
 	printf("%d\n", sum);
