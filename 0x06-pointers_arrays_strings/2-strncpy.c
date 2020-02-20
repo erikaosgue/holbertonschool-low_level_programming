@@ -17,7 +17,7 @@ char *_strncpy(char *dest, char *src, int n)
 		count++;
 		i++;
 	}
-	if (count >= n)
+	if (count > n)
 	{
 		for (j = 0; dest[j] != '\0'; j++)
 		{
@@ -30,7 +30,7 @@ char *_strncpy(char *dest, char *src, int n)
 				break;
 		}
 	}
-	else if (count < n)
+	else if (count <= n)
 	{
 		for (j = 0; j < count; j++)
 		{
