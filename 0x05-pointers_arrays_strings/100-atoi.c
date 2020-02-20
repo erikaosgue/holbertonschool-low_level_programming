@@ -9,30 +9,23 @@ int _atoi(char *s)
 {
 	int j;
 	int i;
-	int l = 0;
 	int minus = 0;
 	int caja = 0;
+	int num = 0;
 
 	for (i = 0; s[i] != 0; i++)
 	{
 		if (s[i] == '-')
-		{
 			minus++;
-		}
 		else if (s[i] >= '0' && s[i] <= '9')
-		{
-			l++;
-			if (!(s[i + 1] >= '0' && s[i + 1] <= '9'))
-				break;
-		}
+			break;
 	}
-	for (j = i - (l - 1); j <= i; j++)
-	{
+	for (j = i; s[j] >= '0' && s[j] <= '9'; j++)
 		caja = caja * 10 + s[j] - '0';
-	}
 	if (minus % 2 != 0)
-	{
-		caja = caja * - 1;
-	}
-	return (caja);
+		num = caja * -1;
+	else
+		num = caja;
+
+	return (num);
 }
