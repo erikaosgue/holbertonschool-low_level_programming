@@ -1,8 +1,9 @@
 #include "holberton.h"
 /**
- *
- *
- *
+ * reverse_array - Reverse a string of integers
+ * @a: string of integers
+ * @n: size of the array
+ * Return: 0 always
  */
 void reverse_array(int *a, int n)
 {
