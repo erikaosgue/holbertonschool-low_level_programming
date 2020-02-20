@@ -1,19 +1,17 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- *
- *
- *
+ * _atoi - Turns a string into an integer
+ * @s: Address of the string
+ * Return: an Integer
  */
 int _atoi(char *s)
 {
 	int j;
 	int i;
-	int k = 0;
 	int l = 0;
 	int minus = 0;
 	int caja = 0;
-	/*int p = 0;*/
 
 	for (i = 0; s[i] != 0; i++)
 	{
@@ -21,28 +19,20 @@ int _atoi(char *s)
 		{
 			minus++;
 		}
-		else if (s[i] >= 48 && s[i] <= 57)
+		else if (s[i] >= '0' && s[i] <= '9')
 		{
-			l++; 
-			printf("%d contador the numeros", l);
-			if (!(s[i + 1] >= 48 && s[i + 1] <= 57))
+			l++;
+			if (!(s[i + 1] >= '0' && s[i + 1] <= '9'))
 				break;
-
 		}
 	}
-	k = i;
-	/*p = l - 1;*/
-	if (minus % 2 != 0)
-	for (j = k; j < l; j++)
+	for (j = i - (l - 1); j <= i; j++)
 	{
 		caja = caja * 10 + s[j] - '0';
-		/*caja += s[j] * 10 ** (l - p);*/
-		/*p--;*/
 	}
 	if (minus % 2 != 0)
 	{
 		caja = caja * - 1;
 	}
 	return (caja);
-
 }
