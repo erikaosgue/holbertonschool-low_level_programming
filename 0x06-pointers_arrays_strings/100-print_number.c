@@ -7,13 +7,15 @@
  */
 void print_number(int n)
 {
-	int num = 0, k = 1, longnum = 0, i = 0, mod = 0;
+	unsigned int num = 0, k = 1, longnum = 0, i = 0, mod = 0;
 
 	if (n < 0)
 	{
 		n *= -1;
 		_putchar('-');
 	}
+	if (n == 0)
+		_putchar(n + '0');
 	num = n;
 	while (num / k)
 	{
@@ -28,9 +30,5 @@ void print_number(int n)
 		k /= 10;
 		_putchar(num + '0');
 		n = mod;
-	}
-	if (num == 0)
-	{
-		_putchar('0');
 	}
 }
