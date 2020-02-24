@@ -7,13 +7,8 @@
  */
 void print_number(int n)
 {
-	int num = 0, flag = 0, k = 1, longnum = 0, i = 0, mod = 0;
+	int num = 0, k = 1, longnum = 0, i = 0, mod = 0;
 
-	if (n == -2147483648)
-	{
-		n = n / 10;
-		flag = 1;
-	}
 	if (n < 0)
 	{
 		n *= -1;
@@ -33,10 +28,6 @@ void print_number(int n)
 		k /= 10;
 		_putchar(num + '0');
 		n = mod;
-	}
-	if (flag == 1)
-	{
-		_putchar('8');
 	}
 	if (num == 0)
 	{
