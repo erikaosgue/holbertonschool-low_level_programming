@@ -7,11 +7,17 @@
  */
 void print_number(int n)
 {
-	unsigned int num = 0, k = 1, longnum = 0, i = 0, mod = 0;
+	int k = 1, longnum = 0, i = 0, mod = 0;
+	unsigned int num = 0;
 
+	if ( n == -2147483648)
+	{
+		num = n;
+	}
 	if (n < 0)
 	{
-		n *= -1;
+		/*n *= -1;*/
+		num = n;
 		_putchar('-');
 	}
 	if (n == 0)
