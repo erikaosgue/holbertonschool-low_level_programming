@@ -35,7 +35,7 @@ int palindrome(char *s, char *t)
 {
 	if (*s == *t)
 	{
-		if (s == t || *(s + 1) == *(t - 1))
+		if (s == t || (s + 1) == t)
 			return (1);
 		else
 			return (palindrome(s + 1, t - 1));
