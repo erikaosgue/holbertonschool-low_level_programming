@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 /**
  * last_char - checks if a word is palindrime
  * @s: addres of the string
@@ -22,6 +21,7 @@ char *last_char(char *s)
 int is_palindrome(char *s)
 {
 	char *t = last_char(s);
+
 	return (palindrome(s, t));
 }
 /**
