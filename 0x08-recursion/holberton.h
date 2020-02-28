@@ -11,6 +11,8 @@ int is_palindrome(char *s);
 int _putchar(char c);
 int square_root(int n, int i);
 int prime_number(int n, int i);
-
+int palindrome(char *s, char *s2);
+int wildcmp(char *s1, char *s2);
+char *last_char(char *s);
 
 #endif
