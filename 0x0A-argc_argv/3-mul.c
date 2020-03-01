@@ -10,17 +10,16 @@
  */
 int main(int argc, char *argv[])
 {
-	int mult, i;
+	int mult;
 
-	mult = 1;
-	i = 0;
-	if (argc < 2)
+	mult = 0;
+	if (argc <= 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
 	else
-		mult = atoi(argv[i + 1]) * atoi(argv[i + 2]);
+		mult = atoi(argv[1]) * atoi(argv[2]);
 	printf("%i\n", mult);
 
 	return (0);
