@@ -10,9 +10,11 @@
  */
 int main(int argc, char *argv[])
 {
-	int i, sum;
+	int i;
+	int sum = 0;
+	char *ptr;
 
-	if (argc <= 1)
+	if (argc < 2)
 	{
 		printf("0\n");
 	}
@@ -20,13 +22,17 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if (*argv[i] >= 48 && *argv[i] <= 57)
-				sum += atoi(argv[i]);
-			else
+			ptr = argv[i];
+			while (*ptr != 0)
 			{
-				printf("Error\n");
-				return (1);
+				if (!isdigit(*ptr))
+				{
+					printf("Error\n");
+					return (1);
+				}
+				ptr++;
 			}
+			sum += atoi(argv[i]);
 		}
 		printf("%i\n", sum);
 	}
