@@ -7,11 +7,10 @@
  */
 int _atoi(char *s)
 {
-	int j;
-	int i;
+	int j, i;
 	int minus = 0;
-	int caja = 0;
-	int num = 0;
+	long int caja = 0;
+	long int num = 0;
 
 	for (i = 0; s[i] != 0; i++)
 	{
@@ -26,6 +25,5 @@ int _atoi(char *s)
 		num = caja * -1;
 	else
 		num = caja;
-
 	return (num);
 }
