@@ -7,10 +7,8 @@
  */
 int _atoi(char *s)
 {
-	int j, i;
-	int minus = 0;
-	long int caja = 0;
-	long int num = 0;
+	int j, i, minus = 0;
+	unsigned int caja = 0, num = 0;
 
 	for (i = 0; s[i] != 0; i++)
 	{
