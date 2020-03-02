@@ -7,34 +7,31 @@
  */
 void print_number(int n)
 {
-	int k = 1, longnum = 0, i = 0, mod = 0;
-	unsigned int num = 0;
+	unsigned int m;
+	int i, k;
 
-	if ( n == -2147483648)
-	{
-		num = n;
-	}
 	if (n < 0)
 	{
-		/*n *= -1;*/
-		num = n;
+		n *= -1;
 		_putchar('-');
 	}
-	if (n == 0)
-		_putchar(n + '0');
-	num = n;
-	while (num / k)
+	m = n;
+	/* k contador para saber lo grande del numero */
+	k = 0;
+	while (m / 10 > 0)
 	{
-		k *= 10;
-		longnum += 1;
+		m /= 10;
+		k++;
 	}
-	k /= 10;
-	for (i = 0; i < longnum; i++)
+	m = n;
+	while (k != 0)
 	{
-		num = n / k;
-		mod = n % k;
-		k /= 10;
-		_putchar(num + '0');
-		n = mod;
+		for (i = 0; i < k; i++)
+			m /= 10;
+		m %= 10;
+		_putchar(m + '0');
+		k--;
+		m = n;
 	}
+	_putchar(m % 10 + '0');
 }
