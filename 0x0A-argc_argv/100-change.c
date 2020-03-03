@@ -38,6 +38,6 @@ int main(int argc, char *argv[])
 			numberofcoins++;
 		}
 		printf("%i\n", numberofcoins);
-		return (numberofcoin);
+		return (0);
 	}
 }
