@@ -17,10 +17,14 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+
 	num = atoi(argv[1]);
 
 	if (argc < 0)
+	{
 		printf("0\n");
+		return (0);
+	}
 	else
 	{
 		while (num > 0)
