@@ -1,39 +1,41 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * free_grid -  frees a 2 dimensional grid previously created
- * @grid: Address of the two dimensional array
- * @height: size of the array vertical
- * Return: 0
+ * argstostr - concatenates all the arguments of the program
+ * @ac: The amount of arguments reciving
+ * @av: The addres of the first argument
+ * Return: The address of the the New pointer with all the arguments on it
  */
 
-/* if(s[i] == NULL? '\n': s[i]);*/
 char *argstostr(int ac, char **av)
 {
-	int i, k, j;
-	char **ptr;
-	
-	ptr = malloc(sizeof(char *) * ac);
-	if (ptr == 0)
-		return (0);
+	int i, k, j, cont = 0;
+	char *ptr;
+
 	for (i = 0; i < ac; i++)
 	{
-		j = 0;
-		while (av[i][j] != 0)
+		for (j = 0; av[i][j] != 0; j++)
 		{
-			j++;
+			cont += 1;
 		}
-		ptr[i] = malloc(sizeof(char) * (j + 1));
-		if (ptr[i] == 0)
-			return (0);
-		k = 0;
-		while (av[i][k] != 0)
-		{
-			ptr[i][k] = av[i][k];
-			k++;
-		}
-		ptr[i][k + 1] = '\n';
-		return (ptr);
+		cont++;
 	}
-	return (0);
+	/* Aumente + 1 contador para el Null al final */
+	cont++;
+	ptr = malloc(sizeof(char) * (cont));
+	if (ptr == 0)
+		return (0);
+	j = 0;
+	for (i = 0; i < ac; i++)
+	{
+		for (k = 0; av[i][k] != 0; k++)
+		{
+			ptr[j] = av[i][k];
+			j += 1;
+		}
+		ptr[j] = '\n';
+		j += 1;
+	}
+	ptr[j] = 0;
+	return (ptr);
 }
