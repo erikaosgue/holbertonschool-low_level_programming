@@ -3,15 +3,16 @@
 #include "holberton.h"
 
 /**
- *
- *
- *
+ * string_nconcat - concatenates two strings.
+ * @s1: address of the new string
+ * @s2: address of the second string
+ * @n: number of bytes to concatenates from s2
+ * Return: the address of the new string ptr
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	unsigned int i, j, size = 0;
 	char *ptr;
-	
 
 	if (s1 == 0)
 		s1 = "";
