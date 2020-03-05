@@ -3,9 +3,9 @@
 #include "holberton.h"
 
 /**
- *
- *
- *
+ * malloc_checked - allocates memory using malloc
+ * @b: amount of bites to allocate
+ * Return: 0 always
  */
 void *malloc_checked(unsigned int b)
 {
