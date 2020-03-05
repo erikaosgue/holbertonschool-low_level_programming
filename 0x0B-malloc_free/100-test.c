@@ -14,8 +14,7 @@ char **strtow(char *str)
 	vertical = count_words(str);
 	ptr = malloc(sizeof(char *) * vertical);
 	if (ptr == 0)
-	return (0);
-
+		return (0);
 	ptr = lenght_of_string(vertical, str);
 
 	for (i = j; str[i] != 0; i++)
@@ -36,8 +35,6 @@ char **strtow(char *str)
 	}
 	return (ptr);
 }
-
-
 char **lenght_of_string(int vertical, char *str);
 {
 	int i = 0, k = 0, j = 0;
@@ -62,6 +59,7 @@ char **lenght_of_string(int vertical, char *str);
 						free(ptr[j]);
 					}
 					free(ptr);
+					return (0);
 				}
 			}
 		}
