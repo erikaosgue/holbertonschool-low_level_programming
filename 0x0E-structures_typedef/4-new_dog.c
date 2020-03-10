@@ -1,9 +1,9 @@
 #include "dog.h"
 #include <stdlib.h>
 /**
- *
- *
- *
+ * _strdup - Return a function to a newly allocated space
+ * @str: address of the new string
+ * Return: address of the string
  */
 char *_strdup(char *str)
 {
@@ -27,9 +27,18 @@ char *_strdup(char *str)
 	s[i] = 0;
 	return (s);
 }
+/**
+ * new_dog - creates a new dog
+ * @name: addres of the name of the dog
+ * @age: age of the dog
+ * @owner: name of the owner
+ * Return: Address of the new struc dog
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
+
 	dog = malloc(sizeof(dog_t));
 	if (dog == 0)
 		return (0);
