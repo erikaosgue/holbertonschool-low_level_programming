@@ -11,20 +11,19 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1 = 0, num2 = 0, result = 0;
+	int num1, num2, result = 0;
 
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[3]);
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (num2 == 0 (*argv[2] == '/' || *argv[2] == '%'))
-		{
-			printf("Error\n");
-			exit(100);
-		}
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+	if (num2 == 0 && (*argv[2] == '/' || *argv[2] == '%'))
+	{
+		printf("Error\n");
+		exit(100);
 	}
 	if (argv[2][1] != 0)
 	{
