@@ -8,10 +8,30 @@
  * @n: is the number of arguments passed
  * Return: Nothing
  */
-void print_strings(const char *separator, const unsigned int n, ...)
+void print_all(const char * const format, ...)
 {
+	struc_format[] = {
+		{"c", func_char}
+		{"i", func_int}
+		{"f", func_float}
+		{"s", func_pointer}
+		{"NULL", NULL}};
 	va_list list;
-	unsigned int i = 0;
-	
+	va_start(list, 
+	while (separator[i])
+	{
+		while (struc_format[i])
+		{
+			if (separator[i] == struc_format[i].format)
+			{
+				struc_format[i].funcion;
+			}
+		}
+	}
 }
+void func_char(va_list list);
+{
+	printf("%c", (char)va_arg(list, int));
+}
+
 
