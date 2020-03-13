@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "variadic_functions.h"
 /**
  * sum_them_all - sum al the passed arguments of the function
  * @n: is the number of arguments passed
