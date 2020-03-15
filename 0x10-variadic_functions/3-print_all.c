@@ -14,7 +14,7 @@ void func_int(va_list list)
 } 
 void func_float(va_list list)
 {
-	printf("%f", va_arg(list, double));
+	printf("%f",(float) va_arg(list, double));
 }
 void func_string(va_list list)
 {
@@ -52,8 +52,8 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", ptr);
 				format_struct[j].f(list);
+				ptr = ", ";
 			}
-			ptr = ", ";
 			j++;
 		}
 		i++;
