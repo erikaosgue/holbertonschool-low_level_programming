@@ -66,7 +66,7 @@ void print_all(const char * const format, ...)
 
 	va_start(list, format);
 
-	while (format[i] != 0)
+	while (format[i] != 0 && format)
 	{
 		j = 0;
 		while (format_struct[j].op != NULL)
