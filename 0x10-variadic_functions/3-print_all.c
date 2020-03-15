@@ -1,37 +1,63 @@
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "variadic_functions.h"
 /**
- * print_numbers - Print each number fallow by the string given
- * @separator: addres of the string given
- * @n: is the number of arguments passed
+ * print_all - Print anything, an int, float, char or string
+ * @format: addres of the string that compares the format
  * Return: Nothing
  */
+void func_char(va_list list)
+{
+ 	 printf("%c", (char)va_arg(list, int));
+}
+void func_int(va_list list)
+{
+	printf("%d", va_arg(list, int));
+} 
+void func_float(va_list list)
+{
+	printf("%f", va_arg(list, double));
+}
+void func_string(va_list list)
+{
+	char *string = va_arg(list, char *);
+	if (string == 0)
+	{
+		printf("(nil)");
+		return;
+	}
+	printf("%s", string);
+}
+
+
 void print_all(const char * const format, ...)
 {
-	struc_format[] = {
-		{"c", func_char}
-		{"i", func_int}
-		{"f", func_float}
-		{"s", func_pointer}
-		{"NULL", NULL}};
 	va_list list;
-	va_start(list, 
-	while (separator[i])
+	int i  = 0, j = 0;
+	char *ptr = ""; 
+	op_t format_struct[] = {
+		
+		{"c", func_char},
+		{"i", func_int},
+		{"f", func_float},
+		{"s", func_string},
+		{NULL, NULL}};
+
+	va_start(list, format);
+
+	while (format[i] != 0 )
 	{
-		while (struc_format[i])
+		j = 0;
+		while (format_struct[j].op != NULL) 
 		{
-			if (separator[i] == struc_format[i].format)
+			if (*format_struct[j].op == format[i])
 			{
-				struc_format[i].funcion;
+				printf("%s", ptr);
+				format_struct[j].f(list);
 			}
+			ptr = ", ";
+			j++;
 		}
+		i++;
 	}
+	printf("\n");
+	va_end(list);
 }
-void func_char(va_list list);
-{
-	printf("%c", (char)va_arg(list, int));
-}
-
-
