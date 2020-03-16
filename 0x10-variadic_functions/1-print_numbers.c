@@ -1,6 +1,3 @@
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
 #include "variadic_functions.h"
 /**
  * print_numbers - Print each number fallow by the string given
