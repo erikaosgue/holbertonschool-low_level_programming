@@ -18,17 +18,17 @@ int copy_file(int fd1, int fd2, char *file_from, char *file_to)
 
 	while ((bytes1 = read(fd1, buffer, 1024)))
 	{
-		if (bytes1 == -1)
-		{
-			dprintf(STDERR_FILENO, "%s%s\n", "Error: Can't read from file ", file_from);
-			exit(98);
-		}
 		bytes2 = write(fd2, buffer, bytes1);
 		if (bytes2 == -1)
 		{
 			dprintf(STDERR_FILENO, "%s%s\n", "Error: Can't write to ", file_to);
 			exit(99);
 		}
+	}
+	if (bytes1 == -1)
+	{
+		dprintf(STDERR_FILENO, "%s%s\n", "Error: Can't read from file ", file_from);
+		exit(98);
 	}
 	cl1 = close(fd1);
 	if (cl1 == -1)
@@ -72,5 +72,3 @@ int main(int argc, char *argv[])
 	}
 	return (copy_file(fd1, fd2, argv[1], argv[2]));
 }
-
-
