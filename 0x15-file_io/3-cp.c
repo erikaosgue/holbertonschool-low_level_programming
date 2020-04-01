@@ -16,7 +16,7 @@ int copy_file(int fd1, int fd2, char *file_from, char *file_to)
 	int bytes1, bytes2, cl1, cl2;
 	char buffer[1024];
 
-	while ((bytes1 = read(fd1, buffer, 1024)))
+	while ((bytes1 = read(fd1, buffer, 1024)) > 0)
 	{
 		bytes2 = write(fd2, buffer, bytes1);
 		if (bytes2 == -1)
