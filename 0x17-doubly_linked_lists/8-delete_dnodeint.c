@@ -29,9 +29,9 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	dlistint_t *current = NULL, *previous = NULL, *temp = NULL;
 	unsigned int count = 0, len_list = 0;
 
-	current = previous = *head;
 	if (head == NULL || *head ==  NULL)
 		return (-1);
+	current = previous = *head;
 	len_list = dlistint_len(*head);
 	if (index < len_list)
 	{
