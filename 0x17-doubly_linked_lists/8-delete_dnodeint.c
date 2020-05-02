@@ -62,6 +62,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 			}
 		}
 	}
-	printf("Indexdoesn't exist\n");
 	return (-1);
 }
