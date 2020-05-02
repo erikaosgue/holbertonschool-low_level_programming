@@ -1,5 +1,4 @@
 #include "lists.h"
-
 /**
  * insert_dnodeint_at_index - A function that inserts a new node
  * at a given position.
@@ -11,7 +10,7 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current, *previous = NULL, *new = NULL;
+	dlistint_t *current = NULL, *previous = NULL, *new = NULL;
 	unsigned int count = 0;
 
 	current = previous = *h;
@@ -26,27 +25,25 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	{ new->prev = new->next = NULL, *h = new;
 		return (*h);
 	}
-	else if (*h != NULL && current->prev == NULL)
+	while (current)
 	{
-		while (current)
-		{
-			new->next = current, current->prev = new;
-			if (idx == 0)
-			{ new->prev = NULL, *h = new;
-				return (*h);
-			}
-			if (idx == count)
-			{ new->prev = previous, previous->next = new;
-				return (*h);
-			}
-			count += 1, previous = current, current = current->next;
+		new->next = current, current->prev = new;
+		if (idx == 0)
+		{ new->prev = NULL, *h = new;
+			return (new);
 		}
-		/* adding a node at the end of list */
-		if (current == NULL && idx == count)
-		{
-			new->next = NULL, new->prev = previous, previous->next = new;
-			return (*h);
+		if (idx == count)
+		{ new->prev = previous, previous->next = new;
+			return (new);
 		}
-	} free(new);
+		count += 1, previous = current, current = current->next;
+	}
+	/* adding a node at the end of list */
+	if (current == NULL && idx == count)
+	{
+		new->next = NULL, new->prev = previous, previous->next = new;
+		return (new);
+	}
+	free(new);
 	return (NULL);
 }
