@@ -12,6 +12,8 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *head = NULL;
 
 
+	if (ht == NULL || key == NULL)
+		return (0);
 	if (strcmp(key, "") == 0 || key == '\0')
 		return (0);
 
