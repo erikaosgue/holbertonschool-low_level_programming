@@ -1,6 +1,5 @@
 #include "hash_tables.h"
 
-
 /**
  * shash_table_create - creates a hash table
  * @size: is the size of the array
@@ -177,6 +176,9 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *head = NULL;
 
+	if (ht == NULL)
+		return;
+
 	head = ht->shead;
 
 	if (head == NULL)
@@ -200,6 +202,9 @@ void shash_table_print(const shash_table_t *ht)
 void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *tail = NULL;
+
+	if (ht == NULL)
+		return;
 
 	tail = ht->stail;
 
@@ -225,6 +230,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 void shash_table_delete(shash_table_t *ht)
 {
 	shash_node_t *head = NULL, *temp;
+
+	if (ht == NULL)
+		return;
 
 	head = ht->shead;
 
