@@ -16,7 +16,7 @@ def island_perimeter(grid):
     perimeter = 0
     if grid is None:
         return perimeter
-    if len(grid) > 100 or len(grid[0]) > 100:
+    if len(grid[0]) > 100 or len(grid) > 100:
         return perimeter
 
     for i in range(len(grid)):
