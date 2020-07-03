@@ -9,10 +9,10 @@ all: main$(OBJ) holberton$(OBJ)
 	$(CC) main$(OBJ) holberton$(OBJ) -o $(NAME)
 
 main$(OBJ): main$(SRC) m.h
-	$(COMPILE.c) main$(SRC) -o main$(OBJ)
+	$(COMPILE.c) -c -o main$(OBJ) main$(SRC)
 
 holberton$(OBJ): holberton$(SRC)
-	$(COMPILE.c) holberton$(SRC) -o holberton$(OBJ)
+	$(COMPILE.c) -c -o holberton$(OBJ) holberton$(SRC)
 
 clean:
 	$(RM) *~ $(NAME)
