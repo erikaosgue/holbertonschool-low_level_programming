@@ -1,0 +1,12 @@
+
+holberton: main.o holberton.o
+	gcc main.o holberton.o -o holberton
+
+main.o: main.c
+	gcc -c main.c
+
+holberton.o: holberton.c m.h
+	gcc -c holberton.c
+
+# target: dependencies
+#    system command(s) -> action
