@@ -1,6 +1,6 @@
 
-CC   := gcc
-SRC  := .c
+CC   = gcc
+SRC  = .c
 
 all: main$(SRC) holberton$(SRC) m.h
 	$(CC) main$(SRC) holberton$(SRC) -o holberton

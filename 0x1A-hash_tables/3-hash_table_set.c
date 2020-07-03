@@ -38,18 +38,18 @@ hash_node_t *add_node(hash_node_t **head, const char *key, const char *value)
 	hash_node_t *new = NULL, *temp = NULL;
 	int change_value = 0;
 
-	if (*head == NULL)
-	{
-		new = malloc(sizeof(hash_node_t));
-		if (new == NULL)
-			return (NULL);
+	// if (*head == NULL)
+	// {
+	// 	new = malloc(sizeof(hash_node_t));
+	// 	if (new == NULL)
+	// 		return (NULL);
 
-		new->key = strdup(key);
-		new->value = strdup(value);
-		new->next = *head;
-		*head = new;
-		return (new);
-	}
+	// 	new->key = strdup(key);
+	// 	new->value = strdup(value);
+	// 	new->next = *head;
+	// 	*head = new;
+	// 	return (new);
+	// }
 	temp = *head;
 	while (temp != NULL)
 	{
