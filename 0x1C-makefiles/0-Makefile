@@ -1,12 +1,8 @@
 
-holberton: main.o holberton.o
-	gcc main.o holberton.o -o holberton
+holberton: main.c holberton.c m.h
+	gcc main.c holberton.c -o holberton
 
-main.o: main.c
-	gcc -c main.c
-
-holberton.o: holberton.c m.h
-	gcc -c holberton.c
-
+# This are the rules
 # target: dependencies
-#    system command(s) -> action
+#    system command(s)
+	
