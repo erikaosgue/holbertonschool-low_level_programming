@@ -21,3 +21,5 @@ oclean:
 	$(RM) main$(OBJ) holberton$(OBJ)
 
 fclean: clean oclean
+
+re: oclean all
