@@ -1,9 +1,9 @@
 
-CC      := gcc
-SRC     := .c
-OBJ     := .o
-NAME    := holberton
-CFLAGS  := -Wall -Werror -Wextra -pedantic
+CC = gcc
+SRC = .c
+OBJ = .o
+NAME = holberton
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: main$(OBJ) holberton$(OBJ)
 	$(CC) main$(OBJ) holberton$(OBJ) -o $(NAME)
@@ -21,5 +21,3 @@ oclean:
 	$(RM) main$(OBJ) holberton$(OBJ)
 
 fclean: clean oclean
-
-re: oclean all
