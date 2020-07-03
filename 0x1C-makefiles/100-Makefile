@@ -8,17 +8,18 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: main$(OBJ) holberton$(OBJ)
 	$(CC) main$(OBJ) holberton$(OBJ) -o $(NAME)
 
-main$(OBJ): main$(SRC) m.h
+main_o: main$(SRC) m.h
 	$(COMPILE.c) -c -o main$(OBJ) main$(SRC)
 
-holberton$(OBJ): holberton$(SRC)
-	$(COMPILE.c) -c -o holberton$(OBJ) holberton$(SRC)
+hol_o: holberton$(SRC)
+	$(COMPILE.c) -c -o hol_o holberton$(SRC)
+
 
 clean:
 	$(RM) *~ $(NAME)
 	
 oclean:
-	$(RM) main$(OBJ) holberton$(OBJ)
+	$(RM) main_o hol_o
 
 fclean: clean oclean
 
