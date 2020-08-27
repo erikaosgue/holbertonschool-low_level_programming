@@ -2,7 +2,7 @@
 
 /**
  * jump_search -  searches for a value in a sorted array
- * of integers using the Jump search algorithm
+ * of integers using the backump search algorithm
  * @array: is a pointer to the first element of the array to search in
  * @size:  is the number of elements in array
  * @value: is the value to search for
@@ -12,29 +12,25 @@
 
 int jump_search(int *array, size_t size, int value)
 {
-	int step = 0;
-	int i = 0, j = 0;
+	size_t i = 0, j = 0, step = 0;
 
-	if (!array || size == 0)
+	if (array == NULL || size == 0)
 		return (-1);
 
 	step = sqrt(size);
-
-	while (array[i] < value && i < (int)size)
+	while (j < size && array[j] < value)
 	{
-		printf("Value checked array[%d] = [%d]\n", i, array[i]);
-		j = i;
-		i += step;
+		printf("Value checked array[%ld] = [%d]\n", j, array[j]);
+		i = j;
+		j += step;
 	}
-	printf("Value found between indexes [%d] and [%d]\n", j, i);
 
-	if (i >= (int)size - 1)
-		i = (int)size - 1;
+	printf("Value found between indexes [%ld] and [%ld]\n", i, j);
 
+	j = j < size - 1 ? j : size - 1;
+	for (; i < j && array[i] < value; i++)
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
 
-	for (; array[j] < value && j < i; j++)
-		printf("Value checked array[%d] = [%d]\n", j, array[j]);
-
-	printf("Value checked array[%d] = [%d]\n", j, array[j]);
-	return (array[i] == value ? j : -1);
+	return (array[i] == value ? (int)i : -1);
 }
