@@ -7,37 +7,46 @@
  * @value: is the value to search for
  * Return: -1 If value is not present in array or if array is NULL,
  * otherwise return the index where value is located
- *
  */
+
 int advanced_binary(int *array, size_t size, int value)
 {
-	size_t left = 0;
-	size_t right, i, middle = 0;
+	if (!array)
+		return (-1);
+	return (binary_recursive(array, 0, size - 1, value));
 
-	if (!array || size == 0)
+}
+/**
+ * binary_recursive - searches for a value in a sorted array of integers
+ * using the Binary search algorithm
+ * @array: is a pointer to the first element of the array to search in
+ * @left: Position initial of the array
+ * @right: Position final of the array
+ * @value: is the value to search for
+ * Return: -1, if value is not present in array or if array is NULL,
+ * otherwise return the index where value is located
+ */
+int binary_recursive(int *array, size_t left, size_t right, int value)
+{
+	size_t middle = 0, i = 0;
+
+	if (left > right)
 		return (-1);
 
-	right = size - 1;
+	printf("Searching in array: ");
+	for (i = left; i < right; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[i]);
 
-	while (left <= right)
-	{
-		printf("Searching in array: ");
-		for (i = left; i < right; i++)
-			printf("%d, ", array[i]);
+	middle = (left + right) / 2;
 
-		printf("%d\n", array[i]);
-		middle = (left + right) / 2;
-		/* if value is greater go to the right of middle*/
-		if (array[middle] < value)
-			left = middle + 1;
-		/* if value is smaller go to the left of middle*/
-		else if (array[middle] > value)
-			right = middle - 1;
+	if (array[middle - 1] == value)
+		return (binary_recursive(array, 0, middle, value));
 
-		else if (array[middle - 1] == value)
-			right = middle;
-		else
-			return (middle);
-	}
-	return (-1);
+	else if (array[middle] == value)
+		return ((int)middle);
+
+	else if (array[middle] > value)
+		return (binary_recursive(array, 0, middle - 1, value));
+	return (binary_recursive(array, middle + 1, right, value));
 }
