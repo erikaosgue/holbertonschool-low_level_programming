@@ -41,7 +41,7 @@ int binary_recursive(int *array, size_t left, size_t right, int value)
 	middle = (left + right) / 2;
 
 	if (array[middle - 1] == value)
-		return (binary_recursive(array, 0, middle, value));
+		return (binary_recursive(array, left, middle, value));
 
 	else if (array[middle] == value)
 		return ((int)middle);
