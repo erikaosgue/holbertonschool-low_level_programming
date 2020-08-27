@@ -26,6 +26,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	while (head->n <= value && !flag)
 	{
+		if (head->index == size - 1)
+			break;
 		before = head;
 		for (i = 0; i < step; i++)
 			if (head->next)
