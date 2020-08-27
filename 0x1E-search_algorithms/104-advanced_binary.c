@@ -11,7 +11,7 @@
 
 int advanced_binary(int *array, size_t size, int value)
 {
-	if (array == NULL || size == 0)
+	if (!array)
 		return (-1);
 	return (binary_recursive(array, 0, size - 1, value));
 
@@ -38,18 +38,12 @@ int binary_recursive(int *array, size_t left, size_t right, int value)
 		printf("%d, ", array[i]);
 	printf("%d\n", array[i]);
 
-	middle = (left + right) / 2;
+	middle = (right + left) / 2;
 
-	if (array[middle] == value && middle == 0)
+	if (array[middle] == value && (middle == left || array[middle - 1] != value))
 		return ((int)middle);
 
-	else if (array[middle] == value && array[middle - 1] == value)
+	else if (array[middle] >= value)
 		return (binary_recursive(array, left, middle, value));
-
-	else if (array[middle] == value)
-		return ((int)middle);
-
-	else if (array[middle] > value)
-		return (binary_recursive(array, 0, middle - 1, value));
 	return (binary_recursive(array, middle + 1, right, value));
 }
