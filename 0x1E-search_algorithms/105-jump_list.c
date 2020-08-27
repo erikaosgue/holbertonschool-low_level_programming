@@ -21,6 +21,9 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	step = sqrt(size);
 	head = list;
 
+	if (list->n > value)
+		return (NULL);
+
 	while (head->n <= value && !flag)
 	{
 		before = head;
@@ -37,6 +40,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	while (before != head->next)
 	{
 		printf("Value checked at index[%ld] = [%d]\n", before->index, before->n);
+		if (before->n > value)
+			break;
 		if (before->n == value)
 			return (before);
 		before = before->next;
