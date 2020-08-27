@@ -20,9 +20,8 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 
 	step = sqrt(size);
 	head = list;
-	printf("stepd = %ld\n", step);
 
-	while (head->n < value && !flag)
+	while (head->n <= value && !flag)
 	{
 		before = head;
 		for (i = 0; i < step; i++)
