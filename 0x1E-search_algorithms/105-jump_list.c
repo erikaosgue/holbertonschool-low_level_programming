@@ -17,12 +17,12 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	if (list == NULL || size == 0)
 		return (NULL);
 
-	step = sqrt(size);
+	i = step = sqrt(size);
 	before = head = list;
-	for (; head->index < size - 1 && head->n < value;)
+	while (head->index < size - 1 && head->n < value)
 	{
 		before = head;
-		for (i += step; head->index < i; head = head->next)
+		for (i += step ; head->index < i; head = head->next)
 		{
 			if (head->index == size - 1)
 				break;
