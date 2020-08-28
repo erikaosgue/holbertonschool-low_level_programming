@@ -17,7 +17,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	if (list == NULL || size == 0)
 		return (NULL);
 
-	i = step = sqrt(size);
+	step = sqrt(size);
 	before = head = list;
 	while (head->index < size - 1 && head->n < value)
 	{
